@@ -1,0 +1,79 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  min-height: 100%;
+}
+
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+/* reset title tag */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  line-height: 1.25;
+}
+
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+/* reset paragraph tag */
+p {
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* reset link tag */
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* reset btn tag */
+button {
+  display: block;
+  cursor: pointer;
+}
+
+/* reset list tag */
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+li {
+  display: inline-block;
+}
+
+/* reset input tag */
+label {
+  display: inline-block;
+}
+
+input {
+  display: block;
+  appearance: none;
+  outline: none;
+}
+
+/* other reset */
+blockquote {
+  margin: 0;
+}

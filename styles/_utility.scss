@@ -1,0 +1,12 @@
+/* image responsive */
+.image-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+/* truncate */
+.truncate {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
