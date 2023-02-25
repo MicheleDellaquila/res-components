@@ -4,18 +4,28 @@ const useForm = (initialState, schema) => {
   const [fields, setFields] = useState(initialState)
   const [errors, setErrors] = useState({})
 
-  // reset form fields
+  // reset form
   const resetForm = useCallback(() => {
     setFields({ ...initialState })
   }, [initialState])
 
-  // set errors form
-  const setErrorsForm = useCallback(errors => {
-    setErrors({ ...errors })
-  }, [])
+  // reset input to intialState's value
+  // const resetInput = useCallback(
+  //   field => {
+  //     setFields(prev => {
+  //       return { ...prev, [field]: initialState[field] }
+  //     })
+  //   },
+  //   [initialState]
+  // )
 
-  // clear error
-  const onClearError = useCallback(
+  //   set errors
+  //   const setErrorsForm = useCallback(errors => {
+  //     setErrors({ ...errors })
+  //   }, [])
+
+  // clear input error
+  const clearInputError = useCallback(
     field => {
       delete errors[field]
       setErrors({ ...errors })
@@ -24,52 +34,47 @@ const useForm = (initialState, schema) => {
   )
 
   // change field
-  const onChange = useCallback(
+  const changeInput = useCallback(
     event => {
-      const { type, name, value, checked, files } = event?.target
+      const { name, value, checked } = event?.target
 
-      // clear error field
-      if (errors[name]) onClearError(name)
-
-      // check target event type is checkbox
-      if (type === "checkbox") {
-        setFields(prev => {
-          return { ...prev, [name]: checked }
-        })
-        return
-      }
+      // clear input error
+      if (errors[name]) clearInputError(name)
 
       setFields(prev => {
-        return { ...prev, [name]: value ?? files[0] }
+        return { ...prev, [name]: value ?? checked }
       })
     },
-    [onClearError]
+    [clearInputError]
   )
 
   // submit
   const onSubmit = useCallback(
-    (e, submit) => {
+    (e, submitFunction) => {
       e.preventDefault()
-      const formData = new FormData(e.currentTarget)
 
       // if schema doesn't exist
-      if (!schema) return submit()
+      if (!schema) return submitFunction()
 
-      // validation form with zod
+      // validation form
       const errors = schema.parse(fields)
 
-      if (!Object.keys(errors).length) return setErrors({ ...errors })
-      submit(formData)
+      // check if there are error
+      if (Object.keys(errors).length) {
+        setErrors({ ...errors })
+      } else {
+        return submitFunction()
+      }
     },
-    [fields]
+    [fields, schema]
   )
 
   return {
     fields,
     errors,
-    onChange,
+    changeInput,
+    clearInputError,
     resetForm,
-    setErrorsForm,
     onSubmit,
   }
 }
