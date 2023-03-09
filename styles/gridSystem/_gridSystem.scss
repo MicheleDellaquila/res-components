@@ -2,28 +2,23 @@
 
 /* container */
 .container {
-  max-width: var(--width-container);
+  max-width: 1320px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--padding-container);
-  padding-right: var(--padding-container);
-
-  @media (max-width: 575px) {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
+  padding-left: $gutter;
+  padding-right: $gutter;
 }
 
 /* row */
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-left: calc(-1 * var(--padding-container));
-  margin-right: calc(-1 * var(--padding-container));
+  margin-left: calc(-1 * $gutter);
+  margin-right: calc(-1 * $gutter);
 
-  @media (max-width: 575px) {
-    margin-left: -16px;
-    margin-right: -16px;
+  @media (max-width: 991px) {
+    margin-left: calc(-0.5 * $gutter);
+    margin-right: calc(-0.5 * $gutter);
   }
 }
 
@@ -34,12 +29,12 @@
       .col-#{$property}-#{$i} {
         flex: 0 0 auto;
         width: (100% / $columns) * $i;
-        padding-left: var(--padding-container);
-        padding-right: var(--padding-container);
+        padding-left: $gutter;
+        padding-right: $gutter;
 
-        @media (max-width: 575px) {
-          padding-left: 16px;
-          padding-right: 16px;
+        @media (max-width: 991px) {
+          margin-left: calc(0.5 * $gutter);
+          margin-right: calc(0.5 * $gutter);
         }
       }
     }
