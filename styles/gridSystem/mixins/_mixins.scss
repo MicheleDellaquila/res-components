@@ -1,0 +1,24 @@
+@use "sass:map";
+@import "../variables";
+@import "../functions/functions";
+
+/* container */
+@mixin container() {
+  @each $breakpoint, $value in $grid-breakpoints {
+    @media (min-width: $value) {
+      max-width: valueMap($container-max-widths, $breakpoint);
+      padding-left: calc(0.5 * $gutter-x);
+      padding-right: calc(0.5 * $gutter-x);
+    }
+  }
+}
+
+/* column */
+@mixin col($width, $breakpoint) {
+  $gutterX: map.get($gutter-x, $breakpoint);
+
+  flex: 0 0 auto;
+  width: $width;
+  padding-left: calc(0.5 * 1.6rem);
+  padding-right: calc(0.5 * 1.6rem);
+}

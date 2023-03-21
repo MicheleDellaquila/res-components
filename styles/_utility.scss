@@ -10,3 +10,22 @@
   overflow: hidden;
   white-space: nowrap;
 }
+
+/* col auto */
+.col-auto {
+  width: auto;
+  padding: 0 16px;
+}
+
+/* flexbox utility */
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}

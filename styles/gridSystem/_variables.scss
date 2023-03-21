@@ -1,13 +1,22 @@
-/* variable */
-$gutter: 24px;
+/* gutter */
+$gutter-x: 2.4rem;
 
 /* grid system */
-$columns: 12;
-$breakpoints: (
+$grid-columns: 12;
+$grid-breakpoints: (
   "xs": 0,
   "sm": 576px,
   "md": 768px,
   "lg": 992px,
   "xl": 1200px,
+  "xxl": 1400px,
+);
+
+/* container widths */
+$container-max-widths: (
+  "sm": 540px,
+  "md": 720px,
+  "lg": 960px,
+  "xl": 1140px,
   "xxl": 1320px,
-) !default;
+);
