@@ -1,0 +1,16 @@
+.Input {
+  position: relative;
+  margin-bottom: 1.6rem;
+
+  &__label {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    font-weight: 400;
+  }
+
+  &__error {
+    margin-top: 0.8rem;
+    font-weight: bold;
+    color: red;
+  }
+}

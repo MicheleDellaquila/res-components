@@ -1,7 +1,7 @@
 import React from "react"
-import "./inputField.css"
+import "./input.scss"
 
-const InputField = ({
+const Input = ({
   children,
   label,
   className,
@@ -10,11 +10,11 @@ const InputField = ({
   placeholder,
   onChange,
   value,
-  errorMessage,
+  error,
 }) => {
   return (
-    <div className="InputField">
-      {label && <label className="InputField__label">{label}</label>}
+    <div className="Input">
+      {label && <label className="Input__label">{label}</label>}
       <input
         className={className}
         name={name}
@@ -23,10 +23,10 @@ const InputField = ({
         onChange={onChange}
         value={value}
       />
-      {errorMessage && <p>{errorMessage}</p>}
+      {error && <p className="Input__error">{error}</p>}
       {children && children}
     </div>
   )
 }
 
-export default InputField
+export default Input

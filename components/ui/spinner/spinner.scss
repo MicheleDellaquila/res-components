@@ -1,8 +1,23 @@
-.spinner {
+.Spinner {
   border-radius: 50%;
   background: none;
   -webkit-mask: none;
   animation: spinner 1s infinite linear;
+
+  &--lg {
+    width: 64px;
+    height: 64px;
+  }
+
+  &--md {
+    width: 48px;
+    height: 48px;
+  }
+
+  &-sm {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 @keyframes spinner-c7wet2 {

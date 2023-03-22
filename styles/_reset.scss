@@ -71,7 +71,8 @@ label {
   display: inline-block;
 }
 
-input {
+input,
+textarea {
   display: block;
   appearance: none;
   outline: none;
