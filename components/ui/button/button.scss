@@ -1,16 +1,40 @@
-/* variant btn */
-.Btn--primary {
-}
+.Btn {
+  display: inline-flex;
+  align-items: center;
+  // font-family: ;
+  font-weight: 400;
+  line-height: 150%;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.15s;
 
-.Btn-secondary {
-}
+  /* variant btn */
+  &--primary {
+  }
 
-/* size btn */
-.Btn--sm {
-}
+  &--secondary {
+  }
 
-.Btn--md {
-}
+  /* size btn */
+  &--sm {
+    // padding
+    font-size: 1.4rem;
+    // border-radius: ;
+  }
 
-.Btn--lg {
+  &--md {
+    // padding
+    font-size: 1.6rem;
+    // border-radius: ;
+  }
+
+  &--lg {
+    // padding
+    font-size: 2rem;
+    // border-radius: ;
+  }
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
 }

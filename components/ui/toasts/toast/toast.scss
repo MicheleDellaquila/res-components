@@ -1,0 +1,75 @@
+.Toast {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 0.4rem;
+  background-color: #eeeeee;
+  z-index: 1;
+  transition: all 350ms;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.6rem;
+  }
+
+  &__icon {
+    display: flex;
+    font-size: 1.6rem;
+
+    &--success {
+      color: rgb(17, 155, 17);
+    }
+
+    &--danger {
+      color: rgb(176, 38, 38);
+    }
+  }
+
+  &__message {
+    font-size: 1.6rem;
+
+    &--success {
+      color: rgb(17, 155, 17);
+    }
+
+    &--danger {
+      color: rgb(176, 38, 38);
+    }
+  }
+
+  &__deadline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: red;
+    animation: expireToast 5s linear forwards;
+
+    &--success {
+      background-color: rgb(17, 155, 17);
+    }
+
+    &--danger {
+      background-color: rgb(176, 38, 38);
+    }
+  }
+
+  /* type message */
+  &--success {
+    background-color: rgb(224, 255, 224);
+  }
+
+  &--danger {
+    background-color: rgb(255, 218, 218);
+  }
+}
+
+/* expire toast animation */
+@keyframes expireToast {
+  100% {
+    width: 0;
+  }
+}
