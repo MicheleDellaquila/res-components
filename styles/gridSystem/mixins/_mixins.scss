@@ -29,8 +29,10 @@
 }
 
 @mixin col($breakpoint, $i) {
-  flex: 0 0 auto;
-  width: calc((100% / $grid-columns) * $i);
-  padding-left: calc(0.5 * valueMap($gutter, $breakpoint));
-  padding-right: calc(0.5 * valueMap($gutter, $breakpoint));
+  .col-#{$breakpoint}-#{$i} {
+    flex: 0 0 auto;
+    width: calc((100% / $grid-columns) * $i);
+    padding-left: calc(0.5 * valueMap($gutter, $breakpoint));
+    padding-right: calc(0.5 * valueMap($gutter, $breakpoint));
+  }
 }
