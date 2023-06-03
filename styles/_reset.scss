@@ -1,10 +1,14 @@
+/* reset html */
 html {
   font-size: 62.5%;
 }
 
+html,
 body {
-  min-height: 100%;
-  // background-color: var(--primary-color);
+  height: 100%;
+}
+
+body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -15,35 +19,63 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  list-style: none;
 }
 
-/* reset title tag */
+/* media defaults */
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* reset headlines + paragraph */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin: 0;
   line-height: 1.25;
 }
 
-h4,
-h5,
-h6 {
-  font-weight: 400;
-}
-
 p {
-  margin: 0;
   line-height: 1.5;
   font-weight: 400;
 }
 
-a {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  overflow-wrap: break-word;
+}
+
+/* reset form elements */
+ul,
+ol {
+  list-style: none;
+}
+
+input,
+textarea {
+  display: block;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+label {
   display: inline-block;
-  text-decoration: none;
 }
 
 button {
@@ -51,28 +83,14 @@ button {
   cursor: pointer;
 }
 
-ul,
-ol {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
-
-li {
+/* reset anchor tag */
+a {
   display: inline-block;
+  text-decoration: none;
 }
 
-label {
-  display: inline-block;
-}
-
-input,
-textarea {
-  display: block;
-  appearance: none;
-  outline: none;
-}
-
-blockquote {
-  margin: 0;
+/* reset table */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
