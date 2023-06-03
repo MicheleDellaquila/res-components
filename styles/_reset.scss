@@ -3,10 +3,10 @@ html {
 }
 
 body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   min-height: 100%;
   // background-color: var(--primary-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 *,
@@ -35,26 +35,22 @@ h6 {
   font-weight: 400;
 }
 
-/* reset paragraph tag */
 p {
   margin: 0;
   line-height: 1.5;
   font-weight: 400;
 }
 
-/* reset link tag */
 a {
   display: inline-block;
   text-decoration: none;
 }
 
-/* reset btn tag */
 button {
   display: block;
   cursor: pointer;
 }
 
-/* reset list tag */
 ul,
 ol {
   padding: 0;
@@ -66,7 +62,6 @@ li {
   display: inline-block;
 }
 
-/* reset input tag */
 label {
   display: inline-block;
 }
@@ -78,7 +73,6 @@ textarea {
   outline: none;
 }
 
-/* other reset */
 blockquote {
   margin: 0;
 }

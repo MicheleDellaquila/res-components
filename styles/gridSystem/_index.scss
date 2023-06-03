@@ -1,33 +1,20 @@
-@use "sass:map";
 @import "./variables";
 @import "./mixins/mixins";
 
-/* container style */
 .container {
   @include container();
-
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /* row */
 .row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: calc(-0.5 * $gutter-x);
-  margin-right: calc(-0.5 * $gutter-x);
+  @include row();
 }
 
 /* column creation */
 @each $breakpoint, $value in $grid-breakpoints {
   @for $i from 1 through $grid-columns {
     @media (min-width: $value) {
-      .col-#{$breakpoint}-#{$i} {
-        flex: 0 0 auto;
-        width: calc((100% / $grid-columns) * $i);
-        padding-left: calc(0.5 * $gutter-x);
-        padding-right: calc(0.5 * $gutter-x);
-      }
+      @include col($breakpoint, $i);
     }
   }
 }

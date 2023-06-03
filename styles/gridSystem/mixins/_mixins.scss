@@ -2,23 +2,35 @@
 @import "../variables";
 @import "../functions/functions";
 
-/* container */
 @mixin container() {
+  /* generate width container for each breakpoints */
   @each $breakpoint, $value in $grid-breakpoints {
     @media (min-width: $value) {
       max-width: valueMap($container-max-widths, $breakpoint);
-      padding-left: calc(0.5 * $gutter-x);
-      padding-right: calc(0.5 * $gutter-x);
+      padding-left: calc(0.5 * valueMap($gutter, $breakpoint));
+      padding-right: calc(0.5 * valueMap($gutter, $breakpoint));
+    }
+  }
+
+  margin-inline: auto;
+}
+
+@mixin row() {
+  display: flex;
+  flex-wrap: wrap;
+
+  /* generate gutter for each breakpoints */
+  @each $breakpoint, $value in $grid-breakpoints {
+    @media (min-width: $value) {
+      margin-left: calc(-0.5 * valueMap($gutter, $breakpoint));
+      margin-right: calc(-0.5 * valueMap($gutter, $breakpoint));
     }
   }
 }
 
-/* column */
-@mixin col($width, $breakpoint) {
-  $gutterX: map.get($gutter-x, $breakpoint);
-
+@mixin col($breakpoint, $i) {
   flex: 0 0 auto;
-  width: $width;
-  padding-left: calc(0.5 * 1.6rem);
-  padding-right: calc(0.5 * 1.6rem);
+  width: calc((100% / $grid-columns) * $i);
+  padding-left: calc(0.5 * valueMap($gutter, $breakpoint));
+  padding-right: calc(0.5 * valueMap($gutter, $breakpoint));
 }
