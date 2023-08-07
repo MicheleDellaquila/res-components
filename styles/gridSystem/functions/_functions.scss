@@ -1,7 +1,0 @@
-@import "../variables";
-
-@function valueMap($map, $key) {
-  $value: map.get($map, $key);
-
-  @return $value;
-}

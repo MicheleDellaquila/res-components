@@ -1,9 +1,0 @@
-@import "../variable";
-
-@each $margin, $value in $margin-prefix {
-  @each $key, $m-value in $margin-value {
-    .m#{value}-#{key} {
-      margin-#{margin}: $m-value;
-    }
-  }
-}
