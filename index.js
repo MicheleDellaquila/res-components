@@ -1,3 +1,4 @@
-import { Button } from "./components/ui/button";
+import { Button } from "./components/ui/button/button";
+import { Input } from "./components/ui/input/input";
 
-export default { Button };
+export default { Button, Input };

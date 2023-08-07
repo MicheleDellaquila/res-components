@@ -1,7 +1,7 @@
-import React from "react"
-import "./input.scss"
+import React from "react";
+import "./input.scss";
 
-const Input = ({
+export const Input = ({
   children,
   label,
   className,
@@ -13,8 +13,8 @@ const Input = ({
   error,
 }) => {
   return (
-    <div className="Input">
-      {label && <label className="Input__label">{label}</label>}
+    <div className='Input'>
+      {label && <label className='Input__label'>{label}</label>}
       <input
         className={className}
         name={name}
@@ -23,10 +23,8 @@ const Input = ({
         onChange={onChange}
         value={value}
       />
-      {error && <p className="Input__error">{error}</p>}
+      {error && <p className='Input__error'>{error}</p>}
       {children && children}
     </div>
-  )
-}
-
-export default Input
+  );
+};
