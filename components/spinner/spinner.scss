@@ -1,0 +1,45 @@
+.Spinner {
+  border-radius: 50%;
+
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    #0000 calc(100% - 6.4px),
+    #000 0
+  );
+  animation: loading 1.2s infinite linear;
+
+  /* variants */
+  &--primary {
+    background: conic-gradient(#0000 10%, var(--primary-color, #49b6ff));
+  }
+
+  &--secondary {
+    background: conic-gradient(#0000 10%, var(--secondary-color, #edc913));
+  }
+
+  &--tertiary {
+    background: conic-gradient(#0000 10%, var(--tertiary-color, #ff6700));
+  }
+
+  /* sizes */
+  &--sm {
+    width: 32px;
+    height: 32px;
+  }
+
+  &--md {
+    width: 48px;
+    height: 48px;
+  }
+
+  &--lg {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+@keyframes loading {
+  100% {
+    transform: rotate(1turn);
+  }
+}
