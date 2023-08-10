@@ -31,3 +31,21 @@ function App() {
   </ThemeProvider>
 }
 ```
+
+## Components
+
+The library currently has 3 component types:
+Buttons, Spinners and ButtonLinks. More nees will be added in the future.
+To use a component, proceed as follows.
+
+```javascript
+import { Button } from "rescomponent/components/button/button";
+
+function App() {
+  return (
+    <Button size='sm' variant='primary'>
+      // logic...
+    </Button>
+  );
+}
+```
