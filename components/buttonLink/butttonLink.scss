@@ -8,4 +8,68 @@
   /* end of styles */
   cursor: pointer;
   transition: all 250ms;
+
+  /* variants */
+  &--primary {
+    background-color: var(--primary-color, #49b6ff);
+    color: var(--primary-contrastText, #ffffff);
+
+    &:hover,
+    &:active {
+      background-color: var(--primary-hover, #41a5e8);
+    }
+  }
+
+  &--secondary {
+    background-color: var(--secondary-color, #edc913);
+    color: var(--secondary-contrastText, #141313);
+
+    &:hover,
+    &:active {
+      background-color: var(--secondary-hover, #d1b112);
+    }
+  }
+
+  &--tertiary {
+    background-color: var(--tertiary-color, #ff6700);
+    color: var(--tertiary-contrastText, #ffffff);
+
+    &:hover,
+    &:active {
+      background-color: var(--tertiary-hover, #dd5902);
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 1px solid var(--primary-color, #49b6ff);
+    color: var(--primary-color, #49b6ff);
+
+    &:hover,
+    &:active {
+      background-color: var(--primary-hover, #41a5e8);
+    }
+  }
+
+  /* sizes */
+  &--sm {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+
+  &--md {
+    padding: 10px 16px;
+    font-size: 16px;
+  }
+
+  &--lg {
+    padding: 12px 20px;
+    font-size: 20px;
+  }
+
+  /* selector */
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
 }
