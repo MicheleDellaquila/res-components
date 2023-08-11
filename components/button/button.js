@@ -3,14 +3,7 @@ import "./button.scss";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
-export const Button = ({
-  disabled,
-  className,
-  size,
-  variant,
-  onClick,
-  children,
-}) => {
+const Button = ({ disabled, className, size, variant, onClick, children }) => {
   const styleBtn = `Btn Btn--${variant} Btn--${size}`;
 
   return (
@@ -33,3 +26,5 @@ Button.propTypes = {
   onClick: PropTypes.func,
   children: PropTypes.node.isRequired,
 };
+
+export default Button;
