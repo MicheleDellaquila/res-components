@@ -1,8 +1,0 @@
-node_modules/
-package.json
-<<<<<<< HEAD
-.DS_STORE
-=======
-.gitignore
-.DS_STORE
->>>>>>> features-default-exported
