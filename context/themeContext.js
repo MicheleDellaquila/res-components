@@ -1,4 +1,4 @@
-import React, { createContext, useLayoutEffect, useState } from "react";
+import React, { createContext, useLayoutEffect } from "react";
 import { setStylesComponent } from "../utility/theme";
 
 /* context */
@@ -18,24 +18,21 @@ export const ThemeActionContext = createContext({});
 // };
 
 const ThemeProvider = ({ children, styles }) => {
-  const [_, setTheme] = useState(null);
-
   /* set styles in root variable */
   useLayoutEffect(() => {
     // check user pass styles props
     if (!styles && !Object.keys(styles)) return;
 
     setStylesComponent(styles);
-    setTheme(styles);
   }, [setStylesComponent, styles]);
 
   // change theme
-  const changeTheme = useCallback((newStyles) => {
-    setStylesComponent(newStyles);
-    setTheme((prev) => {
-      return { ...prev, newStyles };
-    });
-  }, []);
+  const changeTheme = useCallback(
+    (newStyles) => {
+      setStylesComponent(newStyles);
+    },
+    [setStylesComponent]
+  );
 
   return (
     <ThemeActionContext.Provider value={changeTheme}>
