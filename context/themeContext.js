@@ -17,7 +17,7 @@ export const ThemeActionContext = createContext({});
 //   },
 // };
 
-export const ThemeProvider = ({ children, styles }) => {
+const ThemeProvider = ({ children, styles }) => {
   const [_, setTheme] = useState(null);
 
   /* set styles in root variable */
@@ -29,9 +29,19 @@ export const ThemeProvider = ({ children, styles }) => {
     setTheme(styles);
   }, [setStylesComponent, styles]);
 
+  // change theme
+  const changeTheme = useCallback((newStyles) => {
+    setStylesComponent(newStyles);
+    setTheme((prev) => {
+      return { ...prev, newStyles };
+    });
+  }, []);
+
   return (
-    <ThemeActionContext.Provider value={setTheme}>
+    <ThemeActionContext.Provider value={changeTheme}>
       {children}
     </ThemeActionContext.Provider>
   );
 };
+
+export default ThemeProvider;
