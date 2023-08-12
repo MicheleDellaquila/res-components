@@ -1,8 +1,8 @@
-import React, { createContext, useLayoutEffect, useMemo } from "react";
-import { setTheme } from "../utility/setTheme";
+import React, { createContext, useLayoutEffect, useState } from "react";
+import { setStylesComponent } from "../utility/theme";
 
 /* context */
-export const ThemeContext = createContext({});
+export const ThemeActionContext = createContext({});
 
 /* styles example */
 // const styles = { primary: { color: "#fffff" } };
@@ -18,17 +18,20 @@ export const ThemeContext = createContext({});
 // };
 
 export const ThemeProvider = ({ children, styles }) => {
-  const stylesMemorized = useMemo(() => styles, [styles]);
+  const [_, setTheme] = useState(null);
 
   /* set styles in root variable */
   useLayoutEffect(() => {
-    if (stylesMemorized && Object.keys(stylesMemorized) > 0)
-      setTheme(stylesMemorized);
-  }, [setTheme, stylesMemorized]);
+    // check user pass styles props
+    if (!styles && !Object.keys(styles)) return;
+
+    setStylesComponent(styles);
+    setTheme(styles);
+  }, [setStylesComponent, styles]);
 
   return (
-    <ThemeContext.Provider value={stylesMemorized}>
+    <ThemeActionContext.Provider value={setTheme}>
       {children}
-    </ThemeContext.Provider>
+    </ThemeActionContext.Provider>
   );
 };
