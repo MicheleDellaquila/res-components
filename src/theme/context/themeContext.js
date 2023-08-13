@@ -32,7 +32,4 @@ const ThemeProvider = ({ children, styles }) => {
   return <ThemeContext.Provider value={changeTheme}>{children}</ThemeContext.Provider>;
 };
 
-module.exports = {
-  ThemeContext,
-  ThemeProvider,
-};
+export default ThemeProvider;
