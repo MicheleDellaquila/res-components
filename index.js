@@ -1,7 +1,5 @@
 /* components */
-import Button from "./components/button/index";
-import ButtonLink from "./components/buttonLink/index";
-import Spinner from "./components/spinner/index";
+import index from "./components";
 
 /* logic */
 import ThemeProvider from "./context/index";
