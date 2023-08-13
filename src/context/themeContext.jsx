@@ -1,5 +1,5 @@
-const { createContext, useLayoutEffect } = require("react");
-const setVariables = require("../utility/theme");
+import React, { createContext, useLayoutEffect } from "react";
+import { setTheme } from "../utility/theme";
 
 /* context */
 export const ThemeContext = createContext({});
@@ -23,22 +23,13 @@ const ThemeProvider = ({ children, styles }) => {
     // check user pass styles props
     if (!styles && !Object.keys(styles)) return;
 
-    setVariables(styles);
-  }, [setStylesComponent, styles]);
+    setTheme(styles);
+  }, [setTheme, styles]);
 
   // change theme
-  const changeTheme = useCallback(
-    (newStyles) => {
-      setVariables(newStyles);
-    },
-    [setStylesComponent]
-  );
+  const changeTheme = useCallback((newTheme) => setTheme(newTheme), [setTheme]);
 
-  return (
-    <ThemeContext.Provider value={changeTheme}>
-      {children}
-    </ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={changeTheme}>{children}</ThemeContext.Provider>;
 };
 
 module.exports = {

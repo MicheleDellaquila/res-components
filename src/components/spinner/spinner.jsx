@@ -1,6 +1,6 @@
-const React = require("react");
-require("./spinner.scss");
-const PropTypes = require("prop-types");
+import React from "react";
+import "./spinner.scss";
+import PropTypes from "prop-types";
 
 const Spinner = ({ style, size, variant }) => {
   const className = `Spinner Spinner--${size} Spinner--${variant}`;
