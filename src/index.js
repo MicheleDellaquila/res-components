@@ -5,7 +5,7 @@ import ThemeProvider from "./context/themeContext";
 import useChangeTheme from "./hook/useChangeTheme";
 
 /* object with all files to export */
-const allFiles = {
+const index = {
   ThemeProvider,
   Button,
   ButtonLink,
@@ -13,4 +13,4 @@ const allFiles = {
   useChangeTheme,
 };
 
-export default allFiles;
+export default index;
