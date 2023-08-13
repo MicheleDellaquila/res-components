@@ -2,7 +2,7 @@ const setCssVariable = (variable, value) => {
   document.documentElement.style.setProperty(variable, value);
 };
 
-export const setStylesComponent = (theme) => {
+const setVariables = (theme) => {
   for (const key in theme) {
     for (const prop in theme[key]) {
       const color = theme[key][prop];
@@ -11,3 +11,5 @@ export const setStylesComponent = (theme) => {
     }
   }
 };
+
+module.exports = setVariables;

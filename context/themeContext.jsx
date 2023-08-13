@@ -1,8 +1,8 @@
-import React, { createContext, useLayoutEffect } from "react";
-import { setStylesComponent } from "../utility/theme";
+const { createContext, useLayoutEffect } = require("react");
+const setVariables = require("../utility/theme");
 
 /* context */
-export const ThemeActionContext = createContext({});
+export const ThemeContext = createContext({});
 
 /* styles example */
 // const styles = { primary: { color: "#fffff" } };
@@ -23,22 +23,25 @@ const ThemeProvider = ({ children, styles }) => {
     // check user pass styles props
     if (!styles && !Object.keys(styles)) return;
 
-    setStylesComponent(styles);
+    setVariables(styles);
   }, [setStylesComponent, styles]);
 
   // change theme
   const changeTheme = useCallback(
     (newStyles) => {
-      setStylesComponent(newStyles);
+      setVariables(newStyles);
     },
     [setStylesComponent]
   );
 
   return (
-    <ThemeActionContext.Provider value={changeTheme}>
+    <ThemeContext.Provider value={changeTheme}>
       {children}
-    </ThemeActionContext.Provider>
+    </ThemeContext.Provider>
   );
 };
 
-export default ThemeProvider;
+module.exports = {
+  ThemeContext,
+  ThemeProvider,
+};

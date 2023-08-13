@@ -1,11 +1,11 @@
 /* components */
-import Button from "./components/button/button";
-import ButtonLink from "./components/buttonLink/buttonLink";
-import Spinner from "./components/spinner/spinner";
+const Button = require("./components/button/button");
+const ButtonLink = require("./components/buttonLink/buttonLink");
+const Spinner = require("./components/spinner/spinner");
 
 /* logic */
-import ThemeProvider from "./context/themeContext";
-import useChangeTheme from "./hook/useChangeTheme";
+const ThemeProvider = require("./context/themeContext");
+const useChangeTheme = require("./hook/useChangeTheme");
 
 module.exports = {
   ThemeProvider,

@@ -1,6 +1,6 @@
-import React from "react";
-import "./button.scss";
-import PropTypes from "prop-types";
+const React = require("react");
+require("./button.scss");
+const PropTypes = require("prop-types");
 
 const Button = ({ disabled, style, size, variant, onClick, children }) => {
   const className = `Btn Btn--${variant} Btn--${size}`;
@@ -27,4 +27,4 @@ Button.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default Button;
+module.exports = Button;

@@ -1,12 +1,12 @@
-import React from "react";
-import "./buttonLink";
-import PropTypes from "prop-types";
+const React = require("react");
+require("./buttonLink.scss");
+const PropTypes = require("prop-types");
 
 const ButtonLink = ({ style, href, size, variant, children }) => {
   const className = `ButtonLink ButtonLink--${variant} ButtonLink--${size}`;
 
   return (
-    <a className={className} href={href}>
+    <a style={style} className={className} href={href}>
       {children}
     </a>
   );
@@ -21,4 +21,4 @@ ButtonLink.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default ButtonLink;
+module.exports = ButtonLink;

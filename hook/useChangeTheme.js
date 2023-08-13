@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import { ThemeActionContext } from "../context/themeContext";
+const { useContext } = require("react");
+const { ThemeActionContext } = require("../context/themeContext");
 
 const useChangeTheme = () => {
   const changeTheme = useContext(ThemeActionContext);
@@ -7,4 +7,4 @@ const useChangeTheme = () => {
   return changeTheme;
 };
 
-export default useChangeTheme;
+module.exports = useChangeTheme;
