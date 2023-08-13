@@ -18,7 +18,7 @@ export const ThemeActionContext = createContext({});
 // };
 
 const ThemeProvider = ({ children, styles }) => {
-  /* set styles in root variable */
+  /* override base style components */
   useLayoutEffect(() => {
     // check user pass styles props
     if (!styles && !Object.keys(styles)) return;

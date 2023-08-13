@@ -1,14 +1,14 @@
 import React from "react";
 import "./button.scss";
 import PropTypes from "prop-types";
-import clsx from "clsx";
 
-const Button = ({ disabled, className, size, variant, onClick, children }) => {
-  const styleBtn = `Btn Btn--${variant} Btn--${size}`;
+const Button = ({ disabled, style, size, variant, onClick, children }) => {
+  const className = `Btn Btn--${variant} Btn--${size}`;
 
   return (
     <button
-      className={clsx(styleBtn, className && className)}
+      style={style}
+      className={className}
       disabled={disabled}
       onClick={onClick}
     >
@@ -19,7 +19,7 @@ const Button = ({ disabled, className, size, variant, onClick, children }) => {
 
 Button.propTypes = {
   disabled: PropTypes.bool,
-  className: PropTypes.string,
+  style: PropTypes.object,
   size: PropTypes.oneOf(["sm", "md", "lg"]).isRequired,
   variant: PropTypes.oneOf(["primary", "secondary", "tertiary", "outline"])
     .isRequired,
