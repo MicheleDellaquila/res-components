@@ -1,5 +1,5 @@
 /* components */
-import index from "./components";
+import indexComponent from "./components/indexComponent";
 
 /* logic */
 import ThemeProvider from "./context/index";
