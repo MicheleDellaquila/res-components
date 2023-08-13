@@ -1,8 +1,16 @@
 /* components */
-import indexComponent from "./components/indexComponent";
+import Button from "./components/button/button";
+import ButtonLink from "./components/buttonLink/buttonLink";
+import Spinner from "./components/spinner/spinner";
 
 /* logic */
-import ThemeProvider from "./context/index";
-import useChangeTheme from "./hook/index";
+import ThemeProvider from "./context/themeContext";
+import useChangeTheme from "./hook/useChangeTheme";
 
-export default index;
+module.exports = {
+  ThemeProvider,
+  Button,
+  ButtonLink,
+  Spinner,
+  useChangeTheme,
+};
