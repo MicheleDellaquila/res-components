@@ -14,4 +14,4 @@ Spinner.propTypes = {
   variant: PropTypes.oneOf(["primary", "secondary", "tertiary"]).isRequired,
 };
 
-module.exports = Spinner;
+export default Spinner;

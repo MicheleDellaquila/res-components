@@ -21,4 +21,4 @@ Button.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-module.exports = Button;
+export default Button;
