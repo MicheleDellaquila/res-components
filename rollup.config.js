@@ -16,7 +16,7 @@ export default {
     postcss(),
     babel({
       babelHelpers: "bundled",
-      exclude: "node_modules/**", // Assicurati che Babel non venga eseguito sui moduli esterni
+      exclude: "node_modules/**",
       presets: ["@babel/preset-react"],
     }),
     commonjs(),
