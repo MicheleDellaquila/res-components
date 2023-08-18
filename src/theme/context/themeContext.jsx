@@ -17,14 +17,17 @@ export const ThemeContext = createContext({});
 //   },
 // };
 
-const ThemeProvider = ({ children, styles }) => {
+const ThemeProvider = ({ children, theme }) => {
   /* override base style components */
   useLayoutEffect(() => {
-    // check user pass styles props
-    if (!styles && !Object.keys(styles)) return;
+    // check if theme exists
+    if (!theme) return;
 
-    setTheme(styles);
-  }, [setTheme, styles]);
+    // check user pass theme props
+    if (!Object.keys(theme)) return;
+
+    setTheme(theme);
+  }, [setTheme, theme]);
 
   // change theme
   const changeTheme = useCallback((newTheme) => setTheme(newTheme), [setTheme]);
