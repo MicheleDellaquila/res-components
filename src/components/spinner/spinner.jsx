@@ -2,10 +2,10 @@ import React from "react";
 import "./spinner.scss";
 import PropTypes from "prop-types";
 
-const Spinner = ({ style, size, variant }) => {
+const Spinner = ({ style, size, variant, ...props }) => {
   const className = `Spinner Spinner--${size} Spinner--${variant}`;
 
-  return <div role='spinner' style={style} className={className} />;
+  return <div role='spinner' style={style} className={className} {...props} />;
 };
 
 Spinner.propTypes = {
