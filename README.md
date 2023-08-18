@@ -1,51 +1,42 @@
-## Alert
-
-Warning: "This library is under development and there may be constant changes"
 
 ## Introduction
-
-Res-Component is a library designed to be able to reuse components, such as buttons, inputs etc in every react project we develop.
-
+Welcome to Res-Components, your ultimate solution to efficiently reuse components in React projects. Simplify the development process by creating a collection of ready-to-use components designed to be flexible, customizable, and easily integrated into your designs. Forget duplicating code and save valuable time by focusing on building great user experiences. In the future, there will be website documentation for other explanations
 ## Installation
 
 Install my-project with npm
 
 ```bash
-  npm install rescomponent
+  npm install res-components
 ```
-
-## Modify Styles Component
-
+    
+## Change Theme
 Components already have preset styles, if you want to change follow these steps.
 
 The library already contains basic styles for its components, but if you want to change them, follow these steps
 
 ```javascript
-import { ThemeProvider } from "rescomponent/context/themeContenxt";
+import { ThemeProvider } from "rescomponent";
 
-const styles = const styles = { primary: { color: "#900C3F", contrastText: "#ffffff", hover: "red" } };
+const styles = { primary: { color: "#900C3F", contrastText: "#ffffff", hover: "red" } };
 
 function App() {
-  return <ThemeProvider styles={styles}>
+  return <ThemeProvider theme={styles}>
     // logic...
   </ThemeProvider>
 }
 ```
 
-## Components
 
+## Components
 The library currently has 3 component types:
-Buttons, Spinners and ButtonLinks. More nees will be added in the future.
-To use a component, proceed as follows.
+"**Buttons, Spinner and ButtonLink**"
 
 ```javascript
-import { Button } from "rescomponent/components/button/button";
+import { Button } from "rescomponent";
 
 function App() {
-  return (
-    <Button size='sm' variant='primary'>
-      // logic...
-    </Button>
-  );
+  return <Button size="sm" variant="primary">
+    // logic...
+  </Button>
 }
 ```
