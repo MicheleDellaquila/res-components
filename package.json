@@ -1,6 +1,6 @@
 {
   "name": "res-components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A library to reuse react components in every projects",
   "main": "src/index.js",
   "type": "module",
