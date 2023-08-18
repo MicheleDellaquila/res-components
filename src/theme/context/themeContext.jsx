@@ -1,4 +1,4 @@
-import React, { createContext, useLayoutEffect } from "react";
+import React, { createContext, useLayoutEffect, useCallback } from "react";
 import { setTheme } from "../utility/theme";
 
 /* context */

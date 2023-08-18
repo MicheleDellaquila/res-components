@@ -20,6 +20,10 @@
   ],
   "author": "Michele Dellaquila",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MicheleDellaquila/res-components"
+  },
   "dependencies": {
     "clsx": "^2.0.0",
     "npm": "^9.8.1",
